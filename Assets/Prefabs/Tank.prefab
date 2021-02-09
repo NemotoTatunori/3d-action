@@ -80,6 +80,8 @@ MonoBehaviour:
   m_movingSpeed: 5
   m_bulletPrefab: {fileID: 528186625871358634, guid: 76822aaf19fb63648bd6c4fdb3d15ac7,
     type: 3}
+  m_missilePrefab: {fileID: 8358172783857905316, guid: 2237186b94d45a04d987471942b8f0f4,
+    type: 3}
   m_muzzle: {fileID: 7336492369098743722}
 --- !u!1 &7336492368707880336
 GameObject:

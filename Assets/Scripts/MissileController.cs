@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletController : MonoBehaviour
+public class MissileController : MonoBehaviour
 {
-    [SerializeField] float m_speed = 30f;
-    [SerializeField] float m_lifetime = 1f;
+    [SerializeField] int m_power = 10;
+    [SerializeField] float m_speed = 20f;
+    [SerializeField] float m_lifetime = 3f;
     Rigidbody m_rb = null;
 
     void Start()
@@ -17,17 +18,16 @@ public class BulletController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.gameObject.name);
         if (other.gameObject.CompareTag("EnemyTag"))
         {
             EnemyController controller = null;
             if (other.TryGetComponent(out controller))
             {
-                SphereCollider col = GetComponent<SphereCollider>();
+                BoxCollider col = GetComponent<BoxCollider>();
                 controller.Damage(col);
             }
             Destroy(this.gameObject);
         }
     }
-
-   
 }
